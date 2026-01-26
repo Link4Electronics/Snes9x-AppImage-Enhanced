@@ -13,6 +13,7 @@ export DESKTOP=/usr/share/applications/powermanga.desktop
 
 # Deploy dependencies
 quick-sharun /usr/bin/powermanga
+echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/share/games' >> ./AppDir/.env
 
 # Additional changes can be done in between here
 
