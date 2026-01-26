@@ -14,7 +14,7 @@ license=('custom')
 makedepends=(alsa-lib cairo cmake gdk-pixbuf2 git glib2
     gtk3 gtkmm3 intltool libepoxy libpng libpulse libx11 libxext libxml2
     libxrandr libxv meson minizip nasm portaudio sdl2 zlib
-    cmake qt6-base
+    cmake
 )
 options=('!debug' 'strip')
 source=(git+https://github.com/snes9xgit/snes9x.git)
