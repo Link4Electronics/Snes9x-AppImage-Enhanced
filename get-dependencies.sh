@@ -7,22 +7,22 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    cairo              \
-    cmake              \
-    gdk-pixbuf2        \
-    gtk3               \
-    gtkmm3             \
-    hicolor-icon-theme \
-    intltool           \
-    libdecor           \
-    libepoxy           \
-    libxv              \
-    meson              \
-    minizip            \
-    nasm               \
-    pipewire-audio     \
-    pipewire-jack      \
-    portaudio          \
+    cairo               \
+    cmake               \
+    gdk-pixbuf2         \
+    gtk3                \
+    gtkmm3              \
+    hicolor-icon-theme  \
+    intltool            \
+    libdecor            \
+    libepoxy            \
+    libxv               \
+    meson               \
+    minizip             \
+    nasm                \
+    pipewire-audio      \
+    pipewire-jack       \
+    portaudio           \
     sdl2
 
 echo "Installing debloated packages..."
