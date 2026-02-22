@@ -23,7 +23,8 @@ pacman -Syu --noconfirm \
     pipewire-audio      \
     pipewire-jack       \
     portaudio           \
-    sdl2
+    sdl2                \
+    unzip
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
