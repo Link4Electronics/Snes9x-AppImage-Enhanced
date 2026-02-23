@@ -40,13 +40,23 @@ VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
 git clone --recursive --depth 1 "$REPO" ./snes9x
 echo "$VERSION" > ~/version
 
-cd ./snes9x
-pushd "unix"
-    ./configure \
-        --prefix='/usr' \
-        --enable-netplay
+cd ./snes9x/unix
+set -- --prefix='/usr' \
+       --enable-netplay \
+       --with-system-zip
+if [ "$ARCH" = "aarch64" ]; then
+    set -- "$@" --enable-neon
+fi
+./configure "$@"
+#./configure \
+#    --prefix='/usr' \
+#    --enable-netplay \
+#    --with-system-zip \
+#if [ "$ARCH" = "aarch64" ]; then
+#    --enable-neon
+#fi
 make -j$(nproc)
-popd
+cd ..
 
 cd gtk
 mkdir -p build && cd build
