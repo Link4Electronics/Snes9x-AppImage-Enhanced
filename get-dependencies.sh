@@ -46,6 +46,8 @@ set -- --prefix='/usr' \
        --with-system-zip
 if [ "$ARCH" = "aarch64" ]; then
     set -- "$@" --enable-neon
+    export CFLAGS="$CFLAGS -march=armv8-a+simd -O3"
+    export CXXFLAGS="$CXXFLAGS -march=armv8-a+simd -O3"
 fi
 ./configure "$@"
 #./configure \
