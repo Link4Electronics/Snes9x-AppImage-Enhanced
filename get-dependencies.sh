@@ -41,22 +41,10 @@ git clone --recursive --depth 1 "$REPO" ./snes9x
 echo "$VERSION" > ~/version
 
 cd ./snes9x/unix
-set -- --prefix='/usr' \
-       --enable-netplay \
-       --with-system-zip
-if [ "$ARCH" = "aarch64" ]; then
-    set -- "$@" --enable-neon
-    export CFLAGS="${CFLAGS:-} -march=armv8-a+simd -O3"
-    export CXXFLAGS="${CXXFLAGS:-} -march=armv8-a+simd -O3"
-fi
-./configure "$@"
-#./configure \
-#    --prefix='/usr' \
-#    --enable-netplay \
-#    --with-system-zip \
-#if [ "$ARCH" = "aarch64" ]; then
-#    --enable-neon
-#fi
+./configure \
+    --prefix='/usr' \
+    --enable-netplay \
+    --with-system-zip
 make -j$(nproc)
 cd ..
 
