@@ -46,9 +46,7 @@ cd ./snes9x/unix
     --enable-netplay \
     --with-system-zip
 make -j$(nproc)
-cd ..
-
-cd gtk
+cd ../gtk
 mkdir -p build && cd build
 cmake .. \
     -DCMAKE_INSTALL_PREFIX=/usr \
